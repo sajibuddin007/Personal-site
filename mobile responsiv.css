@@ -1,0 +1,411 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+ p{
+    font-size: 1.2rem;
+    text-align: justify;
+ }
+ 
+h1{
+    font-size: 2.4rem;
+    text-align: center;
+}
+h2{
+    font-size: 2rem;
+    text-align: center;
+}
+.dotted-hr{
+    border: 6px dotted white;
+    border-bottom: none;
+    margin: 20px auto;
+    width: 130px;
+}
+
+                                     /* navbar style start */
+
+
+/* for leptop */
+[class*="col-"]{
+    float: left;
+    padding: 10px;
+}
+/* for mobile */
+[class*="col-"]{
+    width: 100%;
+}
+.navbar{
+    background-color: #40868b;
+    padding: 1% 7%;
+    text-align: center;
+}
+.navbar h1{
+    color: aliceblue;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.nav-menu{
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+}
+.navbar::after{
+    content: '';
+    clear: both;
+    display: table;
+}
+.nav-menu a{
+    background-color: #0c6168;
+    border-radius: 10px;
+    margin: 7px;
+    padding: 10px;
+}
+
+.nav-menu a:hover{
+    background-color: gray;
+}
+
+
+                                 /* navbar style end */
+
+
+                                 /* profile style start */
+.profile{
+    padding: 130px 10px;
+    text-align: center;
+    position: relative;
+}
+/* icon top */
+.profile .top-weather-icon{
+    position: absolute;
+    right: 60px;
+    top: 20px;
+    transition: transform 2s;
+}
+.profile .top-weather-icon:hover{
+   transform: rotate(360deg);
+}
+/* icon bottom */
+.profile .bottom-weather-icon{
+    position: absolute;
+    left: 60px;
+    
+    transition: transform 2s;
+}
+.profile .bottom-weather-icon:hover{
+   transform: rotate(360deg);
+}
+.profile-desc h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+}
+.profile-desc p{
+    color: gray;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto 20px auto;
+}
+.profile::after{
+    display: table;
+    content: '';
+    clear: both;
+}
+                                /* profile style end  */
+
+                                /* about me style start */
+
+.about-me{
+    background-color: #257c5f;
+    padding: 1% 7%;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.about-me::after{
+    clear: both;
+    display: table;
+    content: '';
+}
+.about-me-img img{
+    border: 5px solid white;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+.about-me p{
+    text-align: center;
+}
+.about-me a{
+    font-size: 1.2rem;
+
+}
+.cv-button button{
+    background-color: #052b2f;
+    color: white;
+    
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+                                /* about me style end */
+
+
+                        /* professional-experience start */
+.professional-experince{
+    padding: 1% 0;
+}
+.professional-experince .card{
+    background-color: #a39e9e;
+    border-radius: 5px;
+    padding: 10px;
+    transition: 0.3s;
+    height: 700px;
+}
+.professional-experince .card:hover{
+    box-shadow: 0px 4px 8px 5px black;
+}
+.professional-experince .card::after{
+    display: table;
+    content: '';
+    clear: both;
+}
+.card-icon{
+    text-align: center;
+}
+.card-icon img{
+    margin-top: 20px;
+    width: 100px;
+}  
+.rounded-img{
+    border: 5px solid white;
+    border-radius: 50%;
+    padding: 10px;
+}
+.card-title h2{
+    background-color: #616161;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}                  
+                         /* professional-experience end */
+
+                /* skills style stard */
+.skills-container{
+    padding-right: 45px;
+}
+.skills-container li{
+    list-style: none;
+    font-weight: bold;
+    margin: 30px 10px;
+    text-transform: uppercase;
+    position: relative;
+}
+.skills-container li::before{
+    content: '';
+    position: absolute;
+    top:calc(100% + 5px) ;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    background-color: rgb(86,86,153,5);
+}
+.skills-container li::after{
+    content: '';
+    position: absolute;
+    top:calc(100% + 5px) ;
+    left: 0;
+    
+    width: 0%;
+    height: 10px;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 236);
+
+    animation-duration: 5s;
+    animation-delay:2;
+    animation-timing-function: linear;
+    animation-fill-mode:forwards ;
+    animation-iteration-count:1;
+}
+
+.skills-container li.html::after{
+    animation-name: html;
+}
+@keyframes html{
+    100%{
+        width: 90%;
+        background-color: rgb(0, 47, 255);
+    }
+}
+.skills-container li.bootstrap::after{
+    animation-name: bootstrap;
+}
+@keyframes bootstrap{
+    100%{
+        width: 10%;
+        background-color: rgb(255, 0, 0);
+    }
+}
+.skills-container li.css::after{
+    animation-name: css;
+}
+@keyframes css{
+    100%{
+        width: 50%;
+        background-color: rgb(1, 255, 14);
+    }
+}
+.skills-container li.js::after{
+    animation-name: js;
+}
+@keyframes js{
+    100%{
+        width: 10%;
+        background-color: rgb(255, 0, 0);
+    }
+}
+.skills-container li.jquery::after{
+    animation-name: jquery;
+}
+@keyframes jquery{
+    100%{
+        width: 10%;
+        background-color: rgb(255, 0, 0);
+    }
+}
+.skills-container li.node::after{
+    animation-name: node;
+}
+@keyframes node{
+    100%{
+        width: 10%;
+        background-color: rgb(255, 0, 0);
+    }
+}
+.skills-container li.git::after{
+    animation-name: git;
+}
+@keyframes git{
+    100%{
+        width: 10%;
+        background-color: rgb(255, 0, 0);
+    }
+}
+.skills-container li.express::after{
+    animation-name: express;
+}
+@keyframes express{
+    100%{
+        width: 10%;
+        background-color: rgb(255, 0, 0);
+    }
+}
+.skills-container li.react::after{
+    animation-name: react;
+}
+@keyframes react{
+    100%{
+        width: 10%;
+        background-color: rgb(255, 0, 0);
+    }
+}
+.professional-experince::after{
+    display: table;
+    clear: both;
+    content: '';
+}
+                /* skills style end */
+
+
+                /* achievement-content style start */
+.achievement-contact{
+    padding: 1%;
+    background-color: #39a4ac;
+    color: white;
+}
+.Contact{
+    align-items: center;
+}
+.Contact input, textarea{
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+}
+.Contact button{
+    border-radius: 5px;
+    margin: 30px 0;
+    margin: 0 auto;
+    
+    cursor: pointer;
+    padding: 15px;
+    background-color: #257c5f;
+    color: white;
+    margin: 10px;
+    width: 100px;
+}
+.achievement-contact::after{
+    display: table;
+    clear: both;
+    content: '';
+}
+                /* achievement-content style end */
+
+                /* more ways to contact me style stard */
+.contact-links{
+    text-align: center;
+}
+.media-button .btn{
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 32px;
+    padding: 5px;
+    margin: 10px;
+    width: 50px;
+    background-color: white;
+}
+.btn:hover{
+    background-color: gray;
+}
+                /* more ways to contact me style end */
+
+
+                /* footer style stard  */
+
+.footer{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+.footer-menu a{
+    display: block;
+    margin: 15px 0;
+}
+.footer-menu a:hover{
+color: rgb(255, 0, 76);
+
+}
+.footer::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+                /* footer style end  */
